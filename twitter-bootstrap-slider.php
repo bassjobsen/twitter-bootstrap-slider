@@ -126,19 +126,19 @@ function load_options() {
 	function load_default_images() {
 		$this->images = array(
 			array(
-				'image'		=> 'http://placehold.it/1200x500/ff0000/?text=SLIDE+1',
+				'image'		=>  plugins_url( 'images/slide1.gif' , __FILE__ ),
 				'caption'	=> '<h2>Lorem ipsum dolor sit amet</h2>
-									  <p>Maecenas tempor, ante id lacinia varius, est ante fringilla eros, ac porttitor mi purus porttitor augue. In venenatis auctor purus sit amet venenatis. Maecenas quis lacinia metus. Morbi lobortis vehicula lorem nec suscipit. Morbi euismod, mi quis sollicitudin rhoncus, lorem libero dapibus </p>',
+								<p>Maecenas tempor, ante id lacinia varius, est ante fringilla eros, ac porttitor mi purus porttitor augue. In venenatis auctor purus sit amet venenatis. Maecenas quis lacinia metus. Morbi lobortis vehicula lorem nec suscipit. Morbi euismod, mi quis sollicitudin rhoncus, lorem libero dapibus </p>',
 				'link'		=> 'http://www.getbootstrap.com/'
 			),
 			array(
-				'image'		=> 'http://placehold.it/1200x500/00ffff/?text=SLIDE+2',
+				'image'		=> plugins_url( 'images/slide2.gif' , __FILE__ ), 
 				'caption'	=> '<h2>Cras volutpat viverra viverra</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna sit amet rhoncus malesuada. Fusce eget semper mauris. Praesent vitae elit id dui condimentum sollicitudin. Vivamus a lectus at justo ornare aliquam sit amet ac nulla. Quisque dapibus nisl quis orci malesuada, a tristique tellus suscipit. Cras tempus venenatis erat posuere iaculis. Sed vitae lorem eget enim euismod porttitor eu eu nulla. Nulla facilisi. Integer tincidunt leo urna, at congue urna ultricies sit amet. Duis in molestie metus, ac vestibulum ante. Duis tincidunt tortor et gravida vulputate. </p>',
 				'link'		=> ''
 			),
 			array(
-				'image'		=> 'http://placehold.it/1200x500/00ff00/?text=SLIDE+3',
+				'image'		=> plugins_url( 'images/slide3.gif' , __FILE__ ),
 				'caption'	=> '<h2>Cras molestie, nunc vel molestie ullamcorper</h2>
 									  <p>Tellus nulla consequat arcu, et tincidunt velit enim laoreet dolor. Pellentesque dignissim tempor sapien. Morbi mollis tristique ligula vel accumsan. Fusce sed sapien est. Ut suscipit blandit diam, non pulvinar sapien tempor nec. Pellentesque rhoncus euismod tincidunt. Phasellus ac odio metus.</p>',
 				'link'		=> ''
