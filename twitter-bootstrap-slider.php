@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Twitter Bootstrap Image Slider
-Plugin URI: https://github.com/bassjobsen/woocommerce-trustpilot
+Plugin URI: https://github.com/bassjobsen/twitter-bootstrap-slider
 Description: Add a image slider to your pages based on Twitter's Bootstrap's Carousel component
 Version: 1.0
 Author: Bass Jobsen
