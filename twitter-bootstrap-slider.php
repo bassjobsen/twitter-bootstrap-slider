@@ -264,7 +264,7 @@ function admin_image_row($image=false)
 		<p><label><span>Image Source</span>
 			<input type="text" class="url" name="images_url[]" value="<?php echo $image['image']; ?>" /></label></p>
 		<p><label><span>Image Caption</span>
-			<textarea rows="5" cols="100" type="text" class="url" name="images_caption[]" value="<?php echo $image['caption']; ?>" /><?php echo $image['caption']; ?></textarea></label></p>
+			<textarea rows="5" cols="100" type="text" class="url" name="images_caption[]" /><?php echo stripslashes($image['caption']); ?></textarea></label></p>
 		<p><label><span>Image Link URL</span>
 			<input type="text" class="url" name="images_link[]" value="<?php echo $image['link']; ?>" /></label></p>
 
