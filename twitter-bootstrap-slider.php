@@ -3,7 +3,7 @@
 Plugin Name: Twitter Bootstrap Image Slider
 Plugin URI: https://github.com/bassjobsen/twitter-bootstrap-slider
 Description: Add a image slider to your pages based on Twitter's Bootstrap's Carousel component
-Version: 1.0
+Version: 1.0.1
 Author: Bass Jobsen
 Author URI: http://bassjobsen.weblogs.fm/
 License: GPLv2
@@ -209,7 +209,7 @@ function shortcode_show_bootstrapslider()
 		if(!empty($image['link']) && $image['link']!=='#') $items[$i] .= '<a href="'.$image['link'].'">';
 		$items[$i] .= '<img src="'.$image['image'].'">';
 		if(!empty($image['link']) && $image['link']!=='#') $items[$i] .= '</a>';
-		if(!empty($image['caption']) ) $items[$i] .= '<div class="carousel-caption">'.$image['caption'].'</div>';
+		if(!empty($image['caption']) ) $items[$i] .= '<div class="carousel-caption">'.stripslashes($image['caption']).'</div>';
 		
 		$indicators[$i] = ''; 
 		$indicators[$i]  .= '<li '.(($i==0)?'class="active"':'').' data-slide-to="'.$i.'" data-target="#bootstrapslider"></li>';
