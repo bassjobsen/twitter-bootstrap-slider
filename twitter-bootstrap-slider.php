@@ -50,10 +50,11 @@ public function __construct()
 	
 	
 	add_filter( 'init', array( $this, 'init' ) );
+
 	
 	$plugin = plugin_basename(__FILE__); 
 	add_filter("plugin_action_links_$plugin", array($this,'twitter_bootstrap_slider_settings_link')); 
-	
+
 } 
 // END public 
 
@@ -348,7 +349,9 @@ function shortcode_show_bootstrapslider()
           ?>
         </ol>
         <div class="carousel-inner">
+
 		<?php	
+
 		  $k=0;
 		  foreach($items as $item)
           {
@@ -390,6 +393,7 @@ function admin_image_row($image=false)
 		<?php
 }
 
+
 		 function twitter_bootstrap_slider_settings_link($links) 
 		 { 
 			 $settings_link = '<a href="options-general.php?page=twitter-bootstrap-slider">'.__('Settings','twitterbootstrapslider').'</a>';
@@ -407,6 +411,6 @@ if(class_exists('Twitter_Bootstrap_Slider'))
 { // Installation and uninstallation hooks 
 	register_activation_hook(__FILE__, array('Twitter_Bootstrap_Slider', 'activate')); 
 	register_deactivation_hook(__FILE__, array('Twitter_Bootstrap_Slider', 'deactivate')); 
-	
+
 	new Twitter_Bootstrap_Slider();
 }
