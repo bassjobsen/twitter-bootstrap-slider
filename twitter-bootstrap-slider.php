@@ -3,7 +3,7 @@
 Plugin Name: Twitter Bootstrap Image Slider
 Plugin URI: https://github.com/bassjobsen/twitter-bootstrap-slider
 Description: Add a image slider to your pages based on Twitter's Bootstrap's Carousel component
-Version: 1.1.2
+Version: 1.1.3
 Author: Bass Jobsen
 Author URI: http://bassjobsen.weblogs.fm/
 License: GPLv2
@@ -186,8 +186,7 @@ function showform()
 			$this->opts = array_merge($this->opts, array(
 				'slider_interval'	=> isset($_POST['slider_interval'])?$_POST['slider_interval']:0,
 				'slider_pause'	=> ((isset($_POST['slider_pause']) && $_POST['slider_pause']=='1') ? true : false),
-				'slider_automatically'	=> (($_POST['slider_automatically']=='1') ? true : false),
-				'slider_wrap'	=> (($_POST['slider_wrap']=='1') ? true : false)
+				'slider_wrap'	=> ((isset($_POST['slider_wrap']) && ($_POST['slider_wrap']=='1')) ? true : false)
 			));
 			$this->images = array();
 			foreach ($_POST['images_url'] as $key => $url) {
@@ -217,7 +216,7 @@ echo '<div class="wrap">'."\n";
                 <fieldset>
 				<p><label for="slider_interval"><?php echo __('Interval','twitterbootstrapslider');?>:</label>
                 	<select id="slider_interval" name="slider_interval" class="ms"><?php
-					for ($i=1; $i<=20; $i++) {
+					for ($i=0; $i<=20; $i++) {
 						$ms = $i*500;
 						echo '<option value="'.$ms.'" '.selected($ms,$this->opts['slider_interval']).'> '.number_format($ms/1000, 1).'</option>';
 					}
@@ -228,9 +227,7 @@ echo '<div class="wrap">'."\n";
 		
 			   <p class="tick"><label><input type="checkbox" name="slider_pause" value="1" <?php checked($this->opts['slider_pause'], true);  ?>/>
                     <?php echo __('Pause the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave?','twitterbootstrapslider');?></label></p>	
-				<p class="tick"><label><input type="checkbox" name="slider_automatically" value="1" <?php checked($this->opts['slider_automatically'], true);  ?>/>
-                    <?php echo __('Play slideshow automatically?','twitterbootstrapslider');?></label></p>
-				</fieldset>
+
                 <p class="submit"><input type="submit" name="SaveFlexSlider" value="Save All Changes" class="button-primary" /></p>
             </div>
         </div><!-- postbox -->
@@ -302,9 +299,9 @@ function init()
 function tbs_localize_script()
 {
 	    wp_localize_script('bootstrapslider-script', 'bootstrapslider_script_vars', array(
-			'interval' => ($this->opts['slider_automatically'])?$this->opts['slider_interval']:0,
+			'interval' => ($this->opts['slider_interval'])?$this->opts['slider_interval']:false,
 			'pause' => ($this->opts['slider_pause'])?'hover':'none',
-			'wrap' => ($this->opts['slider_wrap'])?'true':'false'
+			'wrap' => ($this->opts['slider_wrap'])?true:false
 		));
 }
 
